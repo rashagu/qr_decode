@@ -1,0 +1,39 @@
+[package]
+name = "my_qrcode_wasm"
+version = "0.1.0"
+authors = ["xxx"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.89", features = ["serde-serialize"] }
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "0.1.7", optional = true }
+js-sys = "0.3.66"
+web-sys = { version = "0.3.66", features = ["Window","TextEncoder", "TextDecoder", "MediaStreamConstraints", "Navigator", "MediaDevices", "MediaStream", "HtmlVideoElement", "Document", "console", "MediaRecorder", "AudioContext", "MediaRecorderOptions", "BlobEvent", "MediaStreamTrack", "HtmlImageElement"] }
+log = "0.4.20"
+wasm-bindgen-futures = "0.4.39"
+qrcode = "0.12.0"
+image = "0.24.7"
+serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.6.1"
+bytemuck = "1.14.0"
+encoding_rs = "0.8.33"
+quircs = "0.10.1"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.39"
+
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
