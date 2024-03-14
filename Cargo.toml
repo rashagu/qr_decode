@@ -22,7 +22,7 @@ js-sys = "0.3.66"
 web-sys = { version = "0.3.66", features = ["Window","TextEncoder", "TextDecoder", "MediaStreamConstraints", "Navigator", "MediaDevices", "MediaStream", "HtmlVideoElement", "Document", "console", "MediaRecorder", "AudioContext", "MediaRecorderOptions", "BlobEvent", "MediaStreamTrack", "HtmlImageElement"] }
 log = "0.4.20"
 wasm-bindgen-futures = "0.4.39"
-qrcode = "0.12.0"
+qrcode = "0.14.0"
 image = "0.24.7"
 serde = { version = "1.0", features = ["derive"] }
 serde-wasm-bindgen = "0.6.1"
